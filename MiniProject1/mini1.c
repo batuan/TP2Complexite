@@ -17,7 +17,10 @@ int main(int argc, char const *argv[])
     struct Affectation affec =
             readAffectation(affectationPath, varialbes);
 
-    printf("verify: %d", verifySAT(problem, affec));
-    printf("\n");
+    time_t begin = clock();
+    printf("verify: %d\n", verifySAT(problem, affec));
+    double time_spent = 0.0;
+    time_spent += (double)(clock() - begin) / CLOCKS_PER_SEC;
+    printf("Time for verify dimacs cnf: %f (seconds) \n", time_spent);
     return 0;
 }

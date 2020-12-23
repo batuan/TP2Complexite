@@ -14,7 +14,6 @@ with open(sys.argv[1], 'r') as file:
         print("S O L U T I O N\n- - - - - - - - -")
     solution = line.split()
     solution[0] = '0'
-    print("length: ", len(solution))
     solution  = list(map(int, solution))
     for i in range(1, square+1):
         for j in range(1, square+1):
